@@ -50,18 +50,18 @@ if (Test-Path $pidFile) {
     # 如果不存在，則執行程式
     Write-Host '開始執行程式'
     #Start-Process -FilePath "$runPS" -ArgumentList $JobArg  -NoNewWindow -PassThru | Select-Object -ExpandProperty Id | Out-File $pidFile
-    cd (Get-Item "$runPS").Directory.FullName
+    #cd (Get-Item "$runPS").Directory.FullName
     $JobArgs = $JobArg -split " "
-    dotnet $runEXE $JobArgs
+    dotnet $runPS $JobArgs
     Write-Host '程式執行完成'
   }
 } else {
   # 如果PID file不存在，則執行程式
     Write-Host '開始執行程式'
     #Start-Process -FilePath "$runPS" -ArgumentList $JobArg  -NoNewWindow -PassThru | Select-Object -ExpandProperty Id | Out-File $pidFile
-    cd (Get-Item "$runPS").Directory.FullName
+    #cd (Get-Item "$runPS").Directory.FullName
     $JobArgs = $JobArg -split " "
-    dotnet $runEXE $JobArgs
+    dotnet $runPS $JobArgs
     Write-Host '程式執行完成'
 }
 
