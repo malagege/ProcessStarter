@@ -1,3 +1,3 @@
 ﻿# Process Ver
-$ProcessVersion = "V1"
+$ProcessVersion = "v1"
 Write-Host "Process envfile Version: $ProcessVersion"
